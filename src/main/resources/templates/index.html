@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khám Phá Ngôn Ngữ Lập Trình C cùng Tân Lê Cloud AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #e0eafc, #cfdef3);
+            min-height: 100vh;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+        }
+        .btn-custom {
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn-custom:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5" style="max-width: 600px;">
+        
+        <div class="card shadow p-4 text-center mb-4 bg-white">
+            <h2 class="text-primary fw-bold mb-3">💻 Thế Giới Lập Trình C</h2>
+            <p class="text-muted fs-6">Vui lòng chọn cấp học của bạn để Tân Lê Cloud AI tự động sáng tác nội dung phù hợp nhất:</p>
+            
+            <div class="d-grid gap-2 mt-3">
+                <a href="/?level=cap1" class="btn btn-outline-success btn-custom py-2" th:classappend="${selectedLevel == 'cap1'} ? 'active'">🧒 Học sinh Cấp 1 (Lớp 1 - 5)</a>
+                <a href="/?level=cap2" class="btn btn-outline-info btn-custom py-2" th:classappend="${selectedLevel == 'cap2'} ? 'active'">🧠 Học sinh Cấp 2 (Lớp 6 - 9)</a>
+                <a href="/?level=cap3" class="btn btn-outline-warning btn-custom py-2" th:classappend="${selectedLevel == 'cap3'} ? 'active'">📘 Học sinh Cấp 3 (Lớp 10 - 12)</a>
+                <a href="/?level=daihoc" class="btn btn-outline-danger btn-custom py-2" th:classappend="${selectedLevel == 'daihoc'} ? 'active'">🎓 Sinh viên Đại học / Đi làm</a>
+            </div>
+        </div>
+
+        <div class="card shadow p-4 bg-white">
+            <h3 class="text-dark border-bottom pb-3 fw-bold" th:text="${title}"></h3>
+            
+            <p class="fs-5 text-secondary mt-3" style="text-align: justify; line-height: 1.8; white-space: pre-line;" th:text="${content}"></p>
+        </div>
+        
+    </div>
+</body>
+</html>
