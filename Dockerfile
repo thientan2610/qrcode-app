@@ -1,4 +1,3 @@
-Dockerfile
 # Bước 1: Dùng môi trường Maven để biên dịch code Java
 FROM maven:3.8.8-openjdk-17 AS build
 COPY . .
