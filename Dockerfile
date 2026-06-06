@@ -1,5 +1,5 @@
-# Bước 1: Biên dịch ứng dụng Java bằng Maven
-FROM maven:3.8.8-openjdk-17 AS build
+# Bước 1: Biên dịch ứng dụng Java bằng bản Maven mới dùng Eclipse Temurin
+FROM maven:3.9.6-eclipse-temurin-17 AS build
 COPY . .
 RUN ./mvnw clean package -DskipTests
 
